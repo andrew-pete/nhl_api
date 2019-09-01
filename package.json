@@ -1,0 +1,19 @@
+{
+  "name": "nhl_api",
+  "version": "1.0.0",
+  "description": "Node/Express RESTful API for NHL game data",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-pete/nhl_api.git"
+  },
+  "author": "Andrew Peterson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrew-pete/nhl_api/issues"
+  },
+  "homepage": "https://github.com/andrew-pete/nhl_api#readme"
+}
