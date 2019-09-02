@@ -4,16 +4,30 @@
   "description": "Node/Express RESTful API for NHL game data",
   "main": "app.js",
   "scripts": {
+    "build": "node app.js",
+    "clean": "rm -rf ./data/*",
     "test": "test"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrew-pete/nhl_api.git"
+    "url": "https://github.com/andrew-pete/nhl_api.git"
   },
   "author": "Andrew Peterson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/andrew-pete/nhl_api/issues"
   },
-  "homepage": "https://github.com/andrew-pete/nhl_api#readme"
+  "homepage": "https://github.com/andrew-pete/nhl_api#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
+  }
 }
