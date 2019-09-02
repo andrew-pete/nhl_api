@@ -1,11 +1,15 @@
 const SeasonResourceHandler = require('./handlers/season-resource-handler');
+const ShiftsResourceHandler = require('./handlers/shifts-resource-handler');
 const { parseResourceDescriptor } = require('../utils/resource-util');
+const Timer = require('../utils/timer');
 
 class ResourceService {
     constructor() {
         this.setResourceHandlers(
-            new SeasonResourceHandler()
+            new SeasonResourceHandler(),
+            new ShiftsResourceHandler()
         );
+        this.timer = new Timer();
     }
 
     async get(descriptor) {
@@ -17,8 +21,18 @@ class ResourceService {
     }
 
     async doGet(descriptor, isOptional) {
+        // start resource timer
+        this.timer.reset().start();
+
         const { type } = parseResourceDescriptor(descriptor);
-        return this.getResourceHandler(type).get(descriptor, isOptional);
+        const resource = await this.getResourceHandler(type).get(descriptor, isOptional);
+
+        // stop resource timer
+        this.timer.stop();
+        console.log(`GET: ${descriptor} in ${this.timer.time} ms`);
+
+        // return resource
+        return resource;
     }
 
     setResourceHandlers(...resourceHandlers) {
