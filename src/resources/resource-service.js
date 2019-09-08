@@ -1,5 +1,6 @@
 const SeasonResourceHandler = require('./handlers/season-resource-handler');
 const ShiftsResourceHandler = require('./handlers/shifts-resource-handler');
+const EventsResourceHandler = require('./handlers/events-resource-handler');
 const { parseResourceDescriptor } = require('../utils/resource-util');
 const Timer = require('../utils/timer');
 
@@ -7,7 +8,8 @@ class ResourceService {
     constructor() {
         this.setResourceHandlers(
             new SeasonResourceHandler(),
-            new ShiftsResourceHandler()
+            new ShiftsResourceHandler(),
+            new EventsResourceHandler()
         );
         this.timer = new Timer();
     }
