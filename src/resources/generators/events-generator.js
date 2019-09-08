@@ -100,9 +100,6 @@ class EventsGenerator {
         });
     }
 
-    /**
-     * @private
-     */
     _getHtmlReportsUrl(descriptor) {
         const { id: fullId } = parseResourceDescriptor(descriptor);
         const { gameId, year } = parseId(fullId);
@@ -133,13 +130,6 @@ class EventsGenerator {
         return data;
     }
 
-    /**
-     * @private
-     */
-    _postProcess(json) {
-        const games = json.dates.reduce( (acc, date) => acc.concat(date.games), []);
-        return { games };
-    }
 }
 
 module.exports = EventsGenerator;
