@@ -1,4 +1,4 @@
-const { resourceMiddleware } = require('./resource-middleware');
+const { resourceMiddleware } = require('./src/resource-middleware');
 
 const express = require('express');
 

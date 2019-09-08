@@ -1,5 +1,5 @@
-const { parseUrl, constructResourceDescriptorString, RESOURCE_TYPES, API_PREFIX} = require('./src/utils/resource-util');
-const resourceService = require('./src/resources/resource-service');
+const { parseUrl, constructResourceDescriptorString, RESOURCE_TYPES, API_PREFIX} = require('./utils/resource-util');
+const resourceService = require('./resources/resource-service');
 
 function resourceMiddleware() {
     return async function resources(req, res, next) {
