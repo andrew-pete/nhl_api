@@ -2,7 +2,7 @@ const { resourceMiddleware } = require('./src/resource-middleware');
 
 const express = require('express');
 
-// Set up the express app
+// Set up the express app, test
 run();
 
 async function run(options = {}, port = 3000) {
